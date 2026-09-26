@@ -114,13 +114,11 @@ If you use MLD in your research, please cite:
 ```bibtex
 @inproceedings{nalwanga2026mld,
   title     = {Multi-Crop Leaf Disease Recognition: A Unified Benchmark and Cross-Region Study},
-  author    = {Nalwanga, Rosemary and [co-authors]},
+  author    = {Nalwanga, Rosemary and Sebastian, Bunda and Luuk, Spreeuwers and Godliver, Owomugisha and Estefania, Talavera},
   booktitle = {Proceedings of the European Workshop on Visual Information Processing (EUVIP)},
   year      = {2026}
 }
 ```
-
-A `CITATION.cff` file is also included for GitHub's native citation support.
 
 Please additionally cite the original source datasets you use — see [Source Datasets](#source-datasets) for their respective papers.
 
