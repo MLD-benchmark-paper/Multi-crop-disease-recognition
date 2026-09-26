@@ -1,15 +1,12 @@
 #!/usr/bin/env python3
 """
-TRAINING: FULLY HIERARCHICAL RESNET-18  CONCATENATED HEADS) — v4
+TRAINING: FULLY HIERARCHICAL RESNET-18  CONCATENATED HEADS) 
 ==========================================================================
-Changes from v3:
-  - Class imbalance handling:
+
       * WeightedRandomSampler for the training loader (per-sample inverse-freq).
       * Capping of the largest classes (configurable MAJORITY_CAP).
       * Per-crop disease-loss class weights + crop-level class weights.
   - Vectorized disease-loss computation (no per-sample Python loop).
-  - All v3 outputs preserved (per-class reports, normalised CMs,
-    training curves, per-fold variance summary).
 
 Notes:
   - We use BOTH a weighted sampler AND mild class-weighted loss. If you find
