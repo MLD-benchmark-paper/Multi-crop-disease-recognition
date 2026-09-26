@@ -1,19 +1,14 @@
 #!/usr/bin/env python3
 """
-TRAINING: FLAT RESNET-18 BASELINE (JOINT CROP+DISEASE LABELS) — v5
+TRAINING: FLAT RESNET-18 BASELINE (JOINT CROP+DISEASE LABELS)
 ===================================================================
-Changes from v4 (HPC throughput, identical experiment logic):
   - Reads dataset path from $DATASET_PATH (set by SLURM to local scratch,
     or point it at your own local dataset copy); see README for setup.
-  - cudnn.benchmark=True, deterministic=False (seeded RNG still controls
-    splits/sampling — bit-exact determinism is dropped for ~30% speedup).
   - DataLoader: pin_memory=True, persistent_workers=True, prefetch_factor=4.
   - NUM_WORKERS=12 (matches --cpus-per-task=16 minus headroom).
   - Mixed precision (torch.cuda.amp) on the train + val forward passes.
   - Resume logic: skip any fold whose fold_summary.csv already exists.
   - MAJORITY_CAP=None (intentionally; merged dataset, no downsampling).
-  - All v4 outputs preserved (per-class reports, normalised CMs,
-    training curves, per-fold variance summary, all 3 metric tracks).
 
 Notes:
   - Validation loss kept UNWEIGHTED for fair comparison across configs.
